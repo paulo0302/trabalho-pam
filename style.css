@@ -1,0 +1,141 @@
+:root {
+  --text-color: white;
+  --bg-url: url(assets/bg-mobile.jpg);
+  --switch-bg-url: url(assets/moon.svg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.2);
+  --higlight-color: rgba(255, 255, 255, 0.2);
+}
+
+.light {
+  --text-color: black;
+  --bg-url: url(assets/bg-mobile-light.jpg);
+  --switch-bg-url: url(assets/sun.svg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color:rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.2);
+  --higlight-color:rgba(0, 0, 0, 0.2);
+}
+
+body {
+  background: var(--bg-url) no-repeat top center/cover;
+  color: var(--text-color);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  width: 500px;
+  height: 600px;
+  margin: 33px auto 33px;
+}
+
+/* Perfil 1 */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Espaço entre os itens */
+}
+
+.cards div {
+  flex: 1;
+  text-align: center;
+}
+
+.cards img {
+  max-width: 100%; /* Evita que as imagens ultrapassem o tamanho do contêiner pai */
+  height: auto; /* Mantém a proporção da imagem */
+  display: block; /* Remove espaços extras abaixo das imagens */
+}
+
+.cards p {
+  margin-top: 10px; /* Espaço entre a imagem e o parágrafo */
+}
+
+/*botão*/
+
+#switch {
+  position: relative;
+  width: 64px;
+
+  margin: 4px auto;
+}
+
+#switch button {
+  width: 32px;
+  height: 32px; 
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  transform: translateY(-50%);
+  animation: slide-back 0.2s forwards
+}
+
+#switch button:hover {
+  outline: 8px solid var(--higlight-color);
+}
+
+.light #switch button {
+  animation: slide-in 0.2s forwards;
+} 
+
+#switch span {
+  display: block;
+  width: 62px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-back {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
+  }
+}
+/*paragrafos*/
+
+.paragrafos {
+  text-indent: 24px;
+  padding-left: 12px;
+  text-align: justify;
+}
+
+#titulo1 {
+  padding-left: 125px;
+}
+
+.paragrafos2 {
+  text-indent: 24px;
+  padding-left: 12px;
+  text-align: justify;
+}
+
+#titulo2 {
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 24px;
+}
+
+#titulo3 {
+  padding-left: 160px;
+}
